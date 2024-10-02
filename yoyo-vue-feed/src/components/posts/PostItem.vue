@@ -12,10 +12,10 @@
       <h2>{{ post.title }}</h2>
       <div v-html="post.content"></div>
 
-      <div class="translate" @click="handleTranslate(post)">translate post</div>
+      <div class="translate" @click="handleTranslate(post, country)">translate post</div>
       <div v-show="showTranslated && post?.translatedContent" v-html="post.translatedContent"></div>
       <!-- Comment List -->
-      <CommentList :comments="post.comments" />
+      <CommentList :comments="post.comments" :country="country" />
     </ion-card-content>
   </IonCard>
 </template>
@@ -30,12 +30,12 @@ const { translate } = useTranslate();  // use composable function
 
 const showTranslated = ref(false);
 
-defineProps<{ post: IPostItem }>();
+defineProps<{ post: IPostItem, country: string }>();
 
-const handleTranslate = async (post: IPostItem) => {
+const handleTranslate = async (post: IPostItem, country: string) => {
   showTranslated.value = !showTranslated.value;
   if (!post?.translatedContent) {
-    await translate(post, post.content, 'en', 'ko'); // translate post content
+    await translate(post, post.content, 'en', country); // translate post content
   }
 };
 </script>
