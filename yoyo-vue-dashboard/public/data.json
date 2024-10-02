@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "title": "Where can I get some?",
+      "image": "https://platinumlist.net/guide/wp-content/uploads/2023/03/IMG-worlds-of-adventure.webp",
+      "status": "OPEN",
+      "isToggling": false
+    },
+    {
+      "id": "2",
+      "title": "What is Lorem Ipsum?",
+      "image": "https://platinumlist.net/guide/wp-content/uploads/2023/03/IMG-worlds-of-adventure.webp",
+      "status": "REJECTED",
+      "isToggling": false
+    },
+    {
+      "id": "3",
+      "title": "Why do we use it?",
+      "image": "https://platinumlist.net/guide/wp-content/uploads/2023/03/IMG-worlds-of-adventure.webp",
+      "status": "APPROVED",
+      "isToggling": false
+    }
+  ]
+}
