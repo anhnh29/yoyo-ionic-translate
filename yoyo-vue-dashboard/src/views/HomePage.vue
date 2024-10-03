@@ -61,6 +61,7 @@ const fetchData = async () => {
 };
 
 onMounted(() => {
+  console.log('run')
   fetchData(); // Get data when component is mounted
 });
 
