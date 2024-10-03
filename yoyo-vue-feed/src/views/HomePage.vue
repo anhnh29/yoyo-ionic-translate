@@ -1,21 +1,17 @@
 <template>
   <ion-page>
-    <ion-header>
+    <ion-header :translucent="true">
       <ion-toolbar>
         <ion-title>News Feed</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="content">
-      <ion-page>
-        <ion-content>
-          <ion-list>
-            <ion-item v-for="post in posts" :key="post.id" lines="none">
-              <PostItem :post="post" :country="country" />
-            </ion-item>
-          </ion-list>
-        </ion-content>
-      </ion-page>
+    <ion-content :fullscreen="true">
+      <ion-list>
+        <ion-item v-for="post in posts" :key="post.id" lines="none" class="content">
+          <PostItem :post="post" :country="country" />
+        </ion-item>
+      </ion-list>
     </ion-content>
   </ion-page>
 </template>
@@ -88,8 +84,6 @@ const getCurrentCountry = async () => {
       `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${googleApiKey}`
     );
     const data = await response.json();
-
-    console.log('Location:', data);
 
     // Extract the country from the API response
     const address = data.results[0].address_components.find((component) =>
